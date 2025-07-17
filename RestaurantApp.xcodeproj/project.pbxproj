@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		6B40BA5B2E28F4EB00098A61 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B40BA5B2E28F4EB00098A61 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RestaurantApp.app; path = /Users/krishna/Desktop/RestaurantApp/build/Debug/RestaurantApp.app; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				6B40BA5D2E28F4EB00098A61 /* RestaurantApp */,
-				6B40BA5C2E28F4EB00098A61 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		6B40BA5C2E28F4EB00098A61 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B40BA5B2E28F4EB00098A61 /* RestaurantApp.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = 6B40BA522E28F4EB00098A61;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 6B40BA5C2E28F4EB00098A61 /* Products */;
+			productRefGroup = 6B40BA522E28F4EB00098A61;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
