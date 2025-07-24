@@ -10,10 +10,14 @@ import SwiftUI
 struct LandingPage: View {
     
     @StateObject var createAccountViewModel : CreateAccountViewModel = CreateAccountViewModel()
+    @StateObject var loginViewModel = LoginViewModel()
     
     @State private var userId: String = ""
     @State private var password: String = ""
-
+    
+    @State private var isLoggedIn = false
+    @State private var showErrorAlert = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
@@ -25,7 +29,7 @@ struct LandingPage: View {
                         .scaledToFit()
                         .frame(width: 80, height: 80)
                         .foregroundColor(.orange)
-                    Text("Krishna Fast Food")
+                    Text("Food App")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
@@ -44,7 +48,18 @@ struct LandingPage: View {
                 }
                 .padding(.horizontal)
                 
+                NavigationLink(destination: AdminDashboardPage(dashboardViewModel: DashboardViewModel()), isActive: $isLoggedIn) {
+                    EmptyView()
+                }
+                
                 Button(action: {
+                    loginViewModel.login(email: userId, password: password) { success in
+                        if success {
+                            isLoggedIn = true
+                        } else {
+                            showErrorAlert = true
+                        }
+                    }
                 }) {
                     Text("Login")
                         .foregroundColor(.white)
@@ -54,6 +69,12 @@ struct LandingPage: View {
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
+                .disabled(loginViewModel.isLoading)
+                
+                if loginViewModel.isLoading {
+                    ProgressView()
+                }
+                
                 
                 HStack {
                     Rectangle()
@@ -77,6 +98,14 @@ struct LandingPage: View {
                 Spacer()
             }
             .padding()
+            .alert(isPresented: $showErrorAlert) {
+                Alert(
+                    title: Text("Login Failed"),
+                    message: Text(loginViewModel.errorMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+            
         }
     }
 }
