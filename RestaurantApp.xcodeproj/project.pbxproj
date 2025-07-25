@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		6B40BA5B2E28F4EB00098A61 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RestaurantApp.app; path = /Users/krishna/Desktop/RestaurantApp/build/Debug/RestaurantApp.app; sourceTree = "<absolute>"; };
+		6B40BA7F2E291E3C00098A61 /* RestaurantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				6B40BA5D2E28F4EB00098A61 /* RestaurantApp */,
+				6B40BA7F2E291E3C00098A61 /* RestaurantApp.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = RestaurantApp;
-			productReference = 6B40BA5B2E28F4EB00098A61 /* RestaurantApp.app */;
+			productReference = 6B40BA7F2E291E3C00098A61 /* RestaurantApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

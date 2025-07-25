@@ -7,7 +7,7 @@
 import Foundation
 
 struct LoginRequest: Codable {
-    let email: String
+    let username: String
     let password: String
 }
 
@@ -20,14 +20,14 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var isLoading = false
     
-    func login(email: String, password: String, completion: @escaping (Bool) -> Void) {
+    func login(username: String, password: String, completion: @escaping (Bool) -> Void) {
         guard let url = URL(string: "http://localhost:8080/login") else {
             self.errorMessage = "Invalid URL"
             completion(false)
             return
         }
         
-        let loginRequest = LoginRequest(email: email, password: password)
+        let loginRequest = LoginRequest(username: username, password: password)
         guard let jsonData = try? JSONEncoder().encode(loginRequest) else {
             self.errorMessage = "Failed to encode request"
             completion(false)
@@ -46,6 +46,7 @@ class LoginViewModel: ObservableObject {
                 self.isLoading = false
                 
                 if let error = error {
+                    print(error)
                     self.errorMessage = error.localizedDescription
                     completion(false)
                     return

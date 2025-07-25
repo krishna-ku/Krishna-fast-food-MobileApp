@@ -12,7 +12,7 @@ struct LandingPage: View {
     @StateObject var createAccountViewModel : CreateAccountViewModel = CreateAccountViewModel()
     @StateObject var loginViewModel = LoginViewModel()
     
-    @State private var userId: String = ""
+    @State private var username: String = ""
     @State private var password: String = ""
     
     @State private var isLoggedIn = false
@@ -36,7 +36,7 @@ struct LandingPage: View {
                 }
                 
                 VStack(spacing: 20) {
-                    TextField("Username", text: $userId)
+                    TextField("Username", text: $username)
                         .padding()
                         .background(Color(.systemGray))
                         .cornerRadius(10)
@@ -53,7 +53,7 @@ struct LandingPage: View {
                 }
                 
                 Button(action: {
-                    loginViewModel.login(email: userId, password: password) { success in
+                    loginViewModel.login(username: username, password: password) { success in
                         if success {
                             isLoggedIn = true
                         } else {
